@@ -20,6 +20,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
   config.vm.network :forwarded_port, guest: 80, host: 9080
+  config.vm.network :forwarded_port, guest: 8080, host: 8080
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
@@ -91,12 +92,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.add_recipe "git"
     chef.add_recipe "ohai"
     chef.add_recipe "iptables"
-    chef.add_recipe "apache2"
-    chef.add_recipe "nginx"
     chef.add_recipe "yum"
     chef.add_recipe "runit"
     chef.add_recipe "java"
-    chef.add_recipe "jenkins"
+    chef.add_recipe "jenkins::server"
     chef.add_recipe "chef-yasm::source"
     chef.add_recipe "humble-ubuntu-development"
     chef.add_recipe "humbleswig"
