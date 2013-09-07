@@ -33,3 +33,10 @@ io.humble.*
 ###
 .chef/*.pem
 .chef/encrypted_data_bag_secret
+
+###
+# For Jenkins
+###
+/humble-video-jenkins/jobs/*/workspace
+/humble-video-jenkins/jobs/*/latest
+/humble-video-jenkins/jobs/*/builds
